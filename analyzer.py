@@ -40,7 +40,7 @@ for line in logs:
 ip_count = Counter(ips)
 failed_count = Counter(failed_ips)
 
-print("\n===== LogSleuth Report =====\n")
+print("\n===== LogSleuth Analysis Report =====\n")
 
 print("Top IP Addresses:")
 for ip, count in ip_count.most_common():
