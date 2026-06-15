@@ -53,7 +53,7 @@ print("\nSuspicious IP Addresses (3+ failed logins):")
 found = False
 
 for ip, count in failed_count.items():
-    if count >= 3:
+    if 3<=count< 5:
         print(f"{ip} ({count} failed logins)")
         found = True
 
