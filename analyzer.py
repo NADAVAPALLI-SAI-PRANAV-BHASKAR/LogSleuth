@@ -60,7 +60,7 @@ for ip, count in failed_count.items():
 if not found:
     print("None")
 
-print("\nPotential Brute Force Sources (5+ failed logins):")
+print("\nPotential Brute Force Sources (5 or more failed logins):")
 
 found = False
 
@@ -121,7 +121,7 @@ with open(report_path, "w") as report:
     report.write("\n")
 
     report.write(
-        "Potential Brute Force Sources (5+ failed logins):\n"
+        "Potential Brute Force Sources (5 or more failed logins):\n"
     )
 
     found = False
