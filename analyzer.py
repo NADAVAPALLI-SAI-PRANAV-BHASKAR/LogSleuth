@@ -48,7 +48,7 @@ for ip, count in ip_count.most_common():
 
 print(f"\nTotal Failed Login Attempts: {len(failed_ips)}")
 
-print("\nSuspicious IP Addresses (3+ failed logins):")
+print("\nSuspicious IP Addresses (3-4 failed logins):")
 
 found = False
 
@@ -103,7 +103,7 @@ with open(report_path, "w") as report:
     report.write("\n")
 
     report.write(
-        "Suspicious IP Addresses (3+ failed logins):\n"
+        "Suspicious IP Addresses (3-4 failed logins):\n"
     )
 
     found = False
