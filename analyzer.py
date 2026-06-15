@@ -1,12 +1,19 @@
 from collections import Counter
+import os
 
 print("=" * 50)
 print("LogSleuth - Log Analysis & Threat Detection Tool")
 print("=" * 50)
 
 try:
-    with open("sample.log", "r") as file:
+    log_path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "sample.log"
+    )
+
+    with open(log_path, "r") as file:
         logs = file.readlines()
+
 except FileNotFoundError:
     print("sample.log not found")
     input("\nPress Enter to exit...")
@@ -52,7 +59,12 @@ for ip, count in failed_count.items():
 if not found:
     print("None")
 
-with open("report.txt", "w") as report:
+report_path = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    "report.txt"
+)
+
+with open(report_path, "w") as report:
     report.write("===== LogSleuth Report =====\n\n")
 
     report.write("Top IP Addresses:\n")
@@ -75,6 +87,6 @@ with open("report.txt", "w") as report:
     if not found:
         report.write("None\n")
 
-print("\nReport saved as report.txt")
+print(f"\nReport saved as:\n{report_path}")
 
 input("\nPress Enter to exit...")
