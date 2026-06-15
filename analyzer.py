@@ -109,7 +109,7 @@ with open(report_path, "w") as report:
     found = False
 
     for ip, count in failed_count.items():
-        if count >= 3:
+        if 3<=count<5:
             report.write(
                 f"{ip} ({count} failed logins)\n"
             )
