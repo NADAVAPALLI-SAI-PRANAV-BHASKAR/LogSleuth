@@ -115,7 +115,7 @@ Total Failed Login Attempts: 7
 Suspicious IP Addresses (3-4 failed logins):
 None
 
-Potential Brute Force Sources (5 or more than 5 failed logins):
+Potential Brute Force Sources (5 or more failed logins):
 192.168.1.10 (5 failed logins)
 ```
 
@@ -138,7 +138,7 @@ Top IP Addresses:
 Suspicious IP Addresses (3-4 failed logins):
 None
 
-Potential Brute Force Sources (5 or more than 5 failed logins):
+Potential Brute Force Sources (5 or more failed logins):
 192.168.1.10 (5 failed logins)
 ```
 
