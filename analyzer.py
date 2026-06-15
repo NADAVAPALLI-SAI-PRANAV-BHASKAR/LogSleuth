@@ -48,7 +48,19 @@ for ip, count in ip_count.most_common():
 
 print(f"\nTotal Failed Login Attempts: {len(failed_ips)}")
 
-print("\nPotential Brute Force Sources:")
+print("\nSuspicious IP Addresses (3+ failed logins):")
+
+found = False
+
+for ip, count in failed_count.items():
+    if count >= 3:
+        print(f"{ip} ({count} failed logins)")
+        found = True
+
+if not found:
+    print("None")
+
+print("\nPotential Brute Force Sources (5+ failed logins):")
 
 found = False
 
@@ -91,7 +103,25 @@ with open(report_path, "w") as report:
     report.write("\n")
 
     report.write(
-        "Potential Brute Force Sources:\n"
+        "Suspicious IP Addresses (3+ failed logins):\n"
+    )
+
+    found = False
+
+    for ip, count in failed_count.items():
+        if count >= 3:
+            report.write(
+                f"{ip} ({count} failed logins)\n"
+            )
+            found = True
+
+    if not found:
+        report.write("None\n")
+
+    report.write("\n")
+
+    report.write(
+        "Potential Brute Force Sources (5+ failed logins):\n"
     )
 
     found = False
